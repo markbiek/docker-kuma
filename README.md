@@ -7,8 +7,9 @@ Portable [Uptime Kuma](https://github.com/louislam/uptime-kuma) deployment using
 1. Clone this repo and start Kuma:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/markbiek/docker-kuma.git
 cd docker-kuma
+cp .env.example .env
 docker compose up -d
 ```
 
