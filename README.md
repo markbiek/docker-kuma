@@ -58,6 +58,20 @@ sudo certbot --nginx -d mon.example.com
 sudo certbot --apache -d mon.example.com
 ```
 
+## Automatic Restart on Reboot
+
+The container is configured with `restart: unless-stopped`, so it will come back up automatically after a host reboot — as long as the Docker daemon starts on boot. Verify with:
+
+```bash
+systemctl is-enabled docker
+```
+
+If it says `disabled`, enable it:
+
+```bash
+sudo systemctl enable docker
+```
+
 ## Data
 
 Kuma stores its SQLite database and config in `./data/`. This directory is git-ignored and created automatically by Docker on first run (owned by root). Back it up however you normally back up your servers — you may need `sudo` to access the directory.
