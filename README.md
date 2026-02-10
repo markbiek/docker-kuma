@@ -59,13 +59,14 @@ sudo certbot --apache -d mon.example.com
 
 ## Data
 
-Kuma stores its SQLite database and config in `./data/`. This directory is git-ignored. Back it up however you normally back up your servers.
+Kuma stores its SQLite database and config in `./data/`. This directory is git-ignored and created automatically by Docker on first run (owned by root). Back it up however you normally back up your servers — you may need `sudo` to access the directory.
 
 ## Migrating from an Existing Install
 
 If you have Kuma running in a named Docker volume, export the data first:
 
 ```bash
+# Replace "uptime-kuma" with your container name if different
 docker cp uptime-kuma:/app/data ./data
 ```
 
